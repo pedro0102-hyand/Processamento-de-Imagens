@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Dados e artefatos gerados (não versionar)
+data/
+manifest.jsonl
+manifest.jsonl.bad.json
+*.npz
+outputs/
+models/
+
+# Sistema
+.DS_Store
