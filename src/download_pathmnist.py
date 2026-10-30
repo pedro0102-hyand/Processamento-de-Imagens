@@ -14,7 +14,7 @@ def main():
     out = Path(args.output)
 
     for split in ["train", "val", "test"]:
-        ds = PathMNIST(split=split, download=True, size=args.size)
+        ds = PathMNIST(split=split, download=True, size=args.size) # carrega o dataset
         n = min(len(ds), args.per_split)
         for i in range(n):
             img, label = ds[i]

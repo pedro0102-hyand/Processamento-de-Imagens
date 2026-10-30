@@ -3,7 +3,7 @@ from collections import Counter
 from pathlib import Path
 from PIL import Image
 
-EXTS = {".png", ".jpg", ".jpeg", ".tif", ".tiff"}
+EXTS = {".png", ".jpg", ".jpeg", ".tif", ".tiff"} # formato aceito para os arquivos de imagens
 SPLITS = {"train", "val", "test"}
 
 def main():
@@ -36,13 +36,14 @@ def main():
         rows.append({
             "path": str(rel),
             "label": parts[-2] if len(parts) > 1 else None,
-            "width": w,
-            "height": h,
-            "mode": mode,
+            "width": w, # largura da imagem em pixels
+            "height": h, # altura da imagem em pixels
+            "mode": mode, # modo de representacao em cores
             "split": split,
             "split_provisional": split is None,
         })
 
+    # divisao aleatória do dataset
     rng = random.Random(args.seed)
     for r in rows:
         if r["split"] is None:

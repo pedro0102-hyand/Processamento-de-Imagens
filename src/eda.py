@@ -8,17 +8,19 @@ from PIL import Image
 def main():
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("--manifest", default="manifest.jsonl")
+    ap.add_argument("--manifest", default="manifest.jsonl") # caminho do manifest JSONL
     ap.add_argument("--root", default="data")
     ap.add_argument("--out", default="eda_out")
-    ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--sample", type=int, default=200, help="imagens por classe p/ cor média")
-    ap.add_argument("--grid", type=int, default=5, help="exemplos por classe na grade")
+    ap.add_argument("--seed", type=int, default=42) # definicao da semente para controle de aleatoriedade
+    ap.add_argument("--sample", type=int, default=200, help="imagens por classe p/ cor média") # Quantidade de imagens por classe para análise de cores.
+    ap.add_argument("--grid", type=int, default=5, help="exemplos por classe na grade") # Quantidade de exemplos por classe na visualização.
     args = ap.parse_args()
 
     rng = random.Random(args.seed)
     root, out = Path(args.root), Path(args.out)
     out.mkdir(exist_ok=True)
+
+    # percorre as linhas do manifesto e converte o conteúdo em um dicionário
     rows = [json.loads(l) for l in open(args.manifest)]
 
     # 1) Classes x splits

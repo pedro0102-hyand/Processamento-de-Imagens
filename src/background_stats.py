@@ -4,15 +4,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+# caracteristicas a serem extraidas das imagens
 MEASURES = ["brilho", "desvio_cinza", "saturacao", "iqr_cinza"]
 
 def measures(path):
-
-    im = Image.open(path).convert("RGB")
-    gray = np.asarray(im.convert("L"), dtype=np.float32)
-    sat = np.asarray(im.convert("HSV"), dtype=np.float32)[..., 1]
-    q25, q75 = np.percentile(gray, [25, 75])
-    return [gray.mean(), gray.std(), sat.mean(), q75 - q25]
+    im = Image.open(path).convert("RGB") # abre a imagem e converte no modelo RGB (vermelho, verde, azul)
+    gray = np.asarray(im.convert("L"), dtype=np.float32) # converte para escala de cinza
+    sat = np.asarray(im.convert("HSV"), dtype=np.float32)[..., 1] # medir saturacao da imagem HSV (matiz, saturacao, valor)
+    q25, q75 = np.percentile(gray, [25, 75]) # calculo estatístico de quartis da imagem
+    return [gray.mean(), gray.std(), sat.mean(), q75 - q25] 
 
 def main():
 

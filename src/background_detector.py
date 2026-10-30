@@ -7,31 +7,31 @@ from PIL import Image
 
 COLS = {"brilho": 0, "desvio_cinza": 1, "iqr_cinza": 2}
 
+# carregamendo dos dados
 def load(csv_path, split):
-
     rows = [r for r in csv.DictReader(open(csv_path)) if r["split"] == split]
     paths = [r["path"] for r in rows]
-    labels = np.array([r["label"] for r in rows])
+    labels = np.array([r["label"] for r in rows]) # cria um array contendo a classificacao das imagens
     X = np.array([[float(r[c]) for c in COLS] for r in rows])
     return paths, labels, X
 
+# classificacao básica conforme as caracetriscas da imagem (brilho, desvio_ciza e iqr_cinza)
 def predict(X, p):
-
     pred = X[:, COLS[p["medida"]]] < p["t"]          # pouca textura
     if "lo" in p:
         pred = pred | (X[:, 0] < p["lo"]) | (X[:, 0] > p["hi"])   # muito escuro/claro
     return pred
 
+# avaliacao das métricas de classificacao
 def prf(y, pred):
-
     tp = int((y & pred).sum()); fp = int((~y & pred).sum()); fn = int((y & ~pred).sum())
     pr = tp / (tp + fp) if tp + fp else 0.0
     rc = tp / (tp + fn) if tp + fn else 0.0
     f = 2 * pr * rc / (pr + rc) if pr + rc else 0.0
     return pr, rc, f, tp, fp, fn
 
+# ajuste para encontrar os melhores parametros
 def fit(y, X, medida, com_brilho):
-
     best = (-1, None)
     ts = np.arange(0.5, 31, 0.5)
     los = range(60, 125, 5) if com_brilho else [None]
