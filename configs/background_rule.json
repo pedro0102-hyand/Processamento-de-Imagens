@@ -1,7 +1,8 @@
 {
-  "rule": "regra2_desvio+brilho",
+  "rule": "r2_desvio+brilho",
   "params": {
-    "t": 8.0,
+    "medida": "desvio_cinza",
+    "t": 10.5,
     "lo": 105,
     "hi": 240
   },
