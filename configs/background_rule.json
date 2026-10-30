@@ -1,0 +1,9 @@
+{
+  "rule": "regra2_desvio+brilho",
+  "params": {
+    "t": 8.0,
+    "lo": 105,
+    "hi": 240
+  },
+  "fit_split": "train"
+}
