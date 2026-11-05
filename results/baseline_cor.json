@@ -1,0 +1,96 @@
+{
+  "experimento": "baseline_cor_random_forest",
+  "pre_processamento": "nenhum",
+  "seed": 42,
+  "hiperparametros": {
+    "max_depth": null,
+    "min_samples_leaf": 1
+  },
+  "n_estimators": 200,
+  "f1_macro_val": 0.7697265313957372,
+  "f1_macro_val_seeds": [
+    0.7662895044669329,
+    0.7735367837559723,
+    0.7676718627876628,
+    0.7680655378369011,
+    0.7686418922890114
+  ],
+  "f1_macro_dummy": 0.025999509443218053,
+  "f1_macro_cor_media": 0.5947560348741594,
+  "por_classe": {
+    "adipose": {
+      "precision": 0.8925233644859814,
+      "recall": 0.9646464646464646,
+      "f1-score": 0.9271844660194175,
+      "support": 198.0
+    },
+    "background": {
+      "precision": 0.9896907216494846,
+      "recall": 0.9230769230769231,
+      "f1-score": 0.9552238805970149,
+      "support": 208.0
+    },
+    "cancer-associated_stroma": {
+      "precision": 0.5497630331753555,
+      "recall": 0.6170212765957447,
+      "f1-score": 0.581453634085213,
+      "support": 188.0
+    },
+    "colorectal_adenocarcinoma_epithelium": {
+      "precision": 0.7482517482517482,
+      "recall": 0.7303754266211604,
+      "f1-score": 0.7392055267702936,
+      "support": 293.0
+    },
+    "debris": {
+      "precision": 0.7136563876651982,
+      "recall": 0.6558704453441295,
+      "f1-score": 0.6835443037974683,
+      "support": 247.0
+    },
+    "lymphocytes": {
+      "precision": 0.8991596638655462,
+      "recall": 0.9067796610169492,
+      "f1-score": 0.9029535864978903,
+      "support": 236.0
+    },
+    "mucus": {
+      "precision": 0.6875,
+      "recall": 0.7058823529411765,
+      "f1-score": 0.6965699208443272,
+      "support": 187.0
+    },
+    "normal_colon_mucosa": {
+      "precision": 0.6521739130434783,
+      "recall": 0.6741573033707865,
+      "f1-score": 0.6629834254143646,
+      "support": 178.0
+    },
+    "smooth_muscle": {
+      "precision": 0.7952755905511811,
+      "recall": 0.7622641509433963,
+      "f1-score": 0.7784200385356455,
+      "support": 265.0
+    },
+    "accuracy": 0.7715,
+    "macro avg": {
+      "precision": 0.7697771580764416,
+      "recall": 0.7711193338396368,
+      "f1-score": 0.7697265313957372,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.7745204025947107,
+      "recall": 0.7715,
+      "f1-score": 0.7723265092864043,
+      "support": 2000.0
+    }
+  },
+  "tempo_features_s": 3.0,
+  "tempo_treino_s": 0.2,
+  "versoes": {
+    "python": "3.12.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.9.1"
+  }
+}

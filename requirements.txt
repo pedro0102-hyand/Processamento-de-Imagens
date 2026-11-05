@@ -2,3 +2,4 @@ pillow
 medmnist
 numpy
 matplotlib
+scikit-learn
