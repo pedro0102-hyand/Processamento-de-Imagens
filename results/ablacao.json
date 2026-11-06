@@ -1,0 +1,187 @@
+{
+  "experimento": "ablacao_preprocessamento_random_forest_cor_textura",
+  "seed": 42,
+  "seeds_extras": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "n_estimators": 200,
+  "regra_fundo": {
+    "rule": "r2_desvio+brilho",
+    "params": {
+      "medida": "desvio_cinza",
+      "t": 10.5,
+      "lo": 105,
+      "hi": 240
+    },
+    "fit_split": "train"
+  },
+  "normalizacao": {
+    "metodo": "reinhard_lab_por_tile",
+    "gain_clip": [
+      0.5,
+      2.0
+    ]
+  },
+  "resultados": {
+    "1 sem pré-proc.": {
+      "hiperparametros": {
+        "max_depth": 20,
+        "min_samples_leaf": 1
+      },
+      "f1_macro_val": 0.85263797667503,
+      "f1_macro_val_seeds": [
+        0.8493971431093659,
+        0.8463344897387358,
+        0.8433364155990061,
+        0.8434546639533437,
+        0.8436234601607944
+      ],
+      "delta_vs_1": 0.0,
+      "ic95_delta": [
+        0.0,
+        0.0
+      ],
+      "f1_por_classe": {
+        "adipose": 0.9554455445544554,
+        "background": 0.9903381642512077,
+        "cancer-associated_stroma": 0.6869806094182825,
+        "colorectal_adenocarcinoma_epithelium": 0.8285229202037352,
+        "debris": 0.8290598290598291,
+        "lymphocytes": 0.9707112970711297,
+        "mucus": 0.824468085106383,
+        "normal_colon_mucosa": 0.7486631016042781,
+        "smooth_muscle": 0.8395522388059702
+      }
+    },
+    "2 fundo: regra + 8 cl.": {
+      "hiperparametros": {
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "f1_macro_val": 0.8236460707668698,
+      "f1_macro_val_seeds": [
+        0.824648800581409,
+        0.8271246798627243,
+        0.8251408548250375,
+        0.8275182594591137,
+        0.8251950758161422
+      ],
+      "delta_vs_1": -0.028991905908160254,
+      "ic95_delta": [
+        -0.038137670613708125,
+        -0.018827982959319454
+      ],
+      "f1_por_classe": {
+        "adipose": 0.9287469287469288,
+        "background": 0.8833746898263027,
+        "cancer-associated_stroma": 0.6781609195402298,
+        "colorectal_adenocarcinoma_epithelium": 0.8252911813643927,
+        "debris": 0.7809110629067245,
+        "lymphocytes": 0.9626556016597511,
+        "mucus": 0.7969151670951157,
+        "normal_colon_mucosa": 0.7277628032345014,
+        "smooth_muscle": 0.828996282527881
+      }
+    },
+    "3 fundo: regra sobrepõe": {
+      "hiperparametros": {
+        "max_depth": 20,
+        "min_samples_leaf": 1
+      },
+      "f1_macro_val": 0.8449913608814237,
+      "f1_macro_val_seeds": [
+        0.8422788429483474,
+        0.8391560841935065,
+        0.8361696722103195,
+        0.835800009836541,
+        0.8359131601283006
+      ],
+      "delta_vs_1": -0.0076466157936063706,
+      "ic95_delta": [
+        -0.012251064090860728,
+        -0.004340452700588235
+      ],
+      "f1_por_classe": {
+        "adipose": 0.945,
+        "background": 0.9534883720930233,
+        "cancer-associated_stroma": 0.6869806094182825,
+        "colorectal_adenocarcinoma_epithelium": 0.8285229202037352,
+        "debris": 0.8034934497816594,
+        "lymphocytes": 0.9727463312368972,
+        "mucus": 0.824468085106383,
+        "normal_colon_mucosa": 0.7506702412868632,
+        "smooth_muscle": 0.8395522388059702
+      }
+    },
+    "4 normaliz. ab": {
+      "hiperparametros": {
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "f1_macro_val": 0.8535429734048088,
+      "f1_macro_val_seeds": [
+        0.84897481062127,
+        0.8476906706757231,
+        0.8409553739145663,
+        0.8412070482519647,
+        0.8480508422608477
+      ],
+      "delta_vs_1": 0.0009049967297787287,
+      "ic95_delta": [
+        -0.012827983316585476,
+        0.015343175589480654
+      ],
+      "f1_por_classe": {
+        "adipose": 0.9597989949748744,
+        "background": 0.9879518072289156,
+        "cancer-associated_stroma": 0.7362637362637363,
+        "colorectal_adenocarcinoma_epithelium": 0.8344594594594594,
+        "debris": 0.814317673378076,
+        "lymphocytes": 0.9588477366255144,
+        "mucus": 0.84,
+        "normal_colon_mucosa": 0.7365591397849462,
+        "smooth_muscle": 0.8136882129277566
+      }
+    },
+    "5 normaliz. full": {
+      "hiperparametros": {
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "f1_macro_val": 0.8529718083807107,
+      "f1_macro_val_seeds": [
+        0.8544397470192319,
+        0.8516864251211644,
+        0.8443657233001177,
+        0.8558181683152155,
+        0.8506467716928885
+      ],
+      "delta_vs_1": 0.0003338317056806872,
+      "ic95_delta": [
+        -0.014824795499076579,
+        0.017120412820547066
+      ],
+      "f1_por_classe": {
+        "adipose": 0.9547738693467337,
+        "background": 0.9807692307692307,
+        "cancer-associated_stroma": 0.7591623036649214,
+        "colorectal_adenocarcinoma_epithelium": 0.8499156829679595,
+        "debris": 0.8027210884353742,
+        "lymphocytes": 0.9484536082474226,
+        "mucus": 0.8,
+        "normal_colon_mucosa": 0.7486033519553073,
+        "smooth_muscle": 0.8323471400394478
+      }
+    }
+  },
+  "tempo_features_s": 17.1,
+  "versoes": {
+    "python": "3.12.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.9.1"
+  }
+}
