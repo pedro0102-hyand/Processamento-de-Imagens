@@ -8,6 +8,7 @@ from PIL import Image
 MEASURES = ["brilho", "desvio_cinza", "saturacao", "iqr_cinza"]
 
 def measures(path):
+    
     im = Image.open(path).convert("RGB") # abre a imagem e converte no modelo RGB (vermelho, verde, azul)
     gray = np.asarray(im.convert("L"), dtype=np.float32) # converte para escala de cinza
     sat = np.asarray(im.convert("HSV"), dtype=np.float32)[..., 1] # medir saturacao da imagem HSV (matiz, saturacao, valor)

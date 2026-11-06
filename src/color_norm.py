@@ -14,6 +14,7 @@ D = 6 / 29
 MODES = {"none": [], "ab": [1, 2], "full": [0, 1, 2]}   # canais L=0, a=1, b=2
 
 def rgb2lab(rgb):
+
     c = rgb.astype(np.float64) / 255.0
     lin = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
     t = (lin @ M.T) / WHITE
@@ -23,6 +24,7 @@ def rgb2lab(rgb):
                      200 * (f[..., 1] - f[..., 2])], -1)
 
 def lab2rgb(lab):
+
     fy = (lab[..., 0] + 16) / 116
     f = np.stack([fy + lab[..., 1] / 500, fy, fy - lab[..., 2] / 200], -1)
     t = np.where(f > D, f ** 3, 3 * D ** 2 * (f - 4 / 29))
@@ -47,6 +49,7 @@ def tile_stats(path):
     return lab.mean(0), lab.std(0)
 
 def main():
+    
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", default="manifest.jsonl")
     ap.add_argument("--root", default="data")
