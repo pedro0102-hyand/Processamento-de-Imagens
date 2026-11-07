@@ -1,0 +1,247 @@
+{
+  "declaracao": "Pipeline (normalização ab, cor+textura, random forest) e treino com treino+validação decididos antes de usar o teste. O teste foi avaliado uma única vez.",
+  "seed": 42,
+  "hiperparametros": {
+    "ab": {
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    "none": {
+      "max_depth": 20,
+      "min_samples_leaf": 1
+    },
+    "full": {
+      "max_depth": null,
+      "min_samples_leaf": 1
+    }
+  },
+  "n_teste": 2000,
+  "principal": {
+    "f1_macro": 0.7866512095580046,
+    "acuracia": 0.817,
+    "ic95_f1_macro": [
+      0.7677409963943037,
+      0.8033635296322369
+    ],
+    "por_classe": {
+      "adipose": {
+        "precisao": 0.9838187702265372,
+        "recall": 0.7979002624671916,
+        "f1": 0.881159420289855,
+        "n": 381
+      },
+      "background": {
+        "precisao": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "n": 235
+      },
+      "cancer-associated_stroma": {
+        "precisao": 0.36231884057971014,
+        "recall": 0.42735042735042733,
+        "f1": 0.39215686274509803,
+        "n": 117
+      },
+      "colorectal_adenocarcinoma_epithelium": {
+        "precisao": 0.8328611898016998,
+        "recall": 0.8828828828828829,
+        "f1": 0.8571428571428571,
+        "n": 333
+      },
+      "debris": {
+        "precisao": 0.6692307692307692,
+        "recall": 0.8969072164948454,
+        "f1": 0.7665198237885462,
+        "n": 97
+      },
+      "lymphocytes": {
+        "precisao": 0.9479166666666666,
+        "recall": 0.9430051813471503,
+        "f1": 0.9454545454545454,
+        "n": 193
+      },
+      "mucus": {
+        "precisao": 0.8464730290456431,
+        "recall": 0.7058823529411765,
+        "f1": 0.769811320754717,
+        "n": 289
+      },
+      "normal_colon_mucosa": {
+        "precisao": 0.8235294117647058,
+        "recall": 0.7897435897435897,
+        "f1": 0.806282722513089,
+        "n": 195
+      },
+      "smooth_muscle": {
+        "precisao": 0.5767441860465117,
+        "recall": 0.775,
+        "f1": 0.6613333333333333,
+        "n": 160
+      }
+    },
+    "matriz_confusao": {
+      "classes": [
+        "adipose",
+        "background",
+        "cancer-associated_stroma",
+        "colorectal_adenocarcinoma_epithelium",
+        "debris",
+        "lymphocytes",
+        "mucus",
+        "normal_colon_mucosa",
+        "smooth_muscle"
+      ],
+      "valores": [
+        [
+          304,
+          0,
+          0,
+          2,
+          1,
+          0,
+          21,
+          0,
+          53
+        ],
+        [
+          0,
+          235,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          50,
+          17,
+          10,
+          2,
+          2,
+          3,
+          33
+        ],
+        [
+          2,
+          0,
+          1,
+          294,
+          8,
+          3,
+          2,
+          21,
+          2
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          87,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          5,
+          182,
+          0,
+          5,
+          0
+        ],
+        [
+          3,
+          0,
+          66,
+          2,
+          9,
+          0,
+          204,
+          4,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          21,
+          3,
+          5,
+          11,
+          154,
+          0
+        ],
+        [
+          0,
+          0,
+          16,
+          12,
+          7,
+          0,
+          1,
+          0,
+          124
+        ]
+      ]
+    },
+    "tempo_treino_s": 0.31,
+    "tempo_predicao_s": 0.026
+  },
+  "secundarias": {
+    "principal: ab, treino+val": {
+      "f1_macro": 0.7866512095580046,
+      "acuracia": 0.817
+    },
+    "ab, só treino": {
+      "f1_macro": 0.7515048112676362,
+      "acuracia": 0.782
+    },
+    "sem pré-proc., treino+val": {
+      "f1_macro": 0.8022455734071283,
+      "acuracia": 0.838
+    },
+    "full, treino+val": {
+      "f1_macro": 0.814953242114433,
+      "acuracia": 0.851
+    }
+  },
+  "delta_ab_vs_sem": {
+    "delta": -0.015594363849123716,
+    "ic95": [
+      -0.03284657339059153,
+      0.0029006858451673797
+    ]
+  },
+  "delta_ab_vs_full": {
+    "delta": -0.02830203255642838,
+    "ic95": [
+      -0.04277495693224537,
+      -0.011866107539320391
+    ]
+  },
+  "referencia_validacao": {
+    "f1_macro": 0.8535429734048088,
+    "f1_macro_seeds": [
+      0.84897481062127,
+      0.8476906706757231,
+      0.8409553739145663,
+      0.8412070482519647,
+      0.8480508422608477
+    ]
+  },
+  "tempo_features_s": 27.5,
+  "versoes": {
+    "python": "3.12.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.9.1"
+  }
+}
