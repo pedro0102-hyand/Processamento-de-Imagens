@@ -1,0 +1,177 @@
+{
+  "observacao": "Análise de erros feita depois do teste. Não altera o pipeline: só gera recomendações.",
+  "confusoes": [
+    {
+      "real": "mucus",
+      "pred": "cancer-associated_stroma",
+      "val_pct": 2.6737967914438503,
+      "teste_pct": 22.837370242214533,
+      "n_teste": 66
+    },
+    {
+      "real": "adipose",
+      "pred": "smooth_muscle",
+      "val_pct": 0.5050505050505051,
+      "teste_pct": 13.910761154855644,
+      "n_teste": 53
+    },
+    {
+      "real": "cancer-associated_stroma",
+      "pred": "smooth_muscle",
+      "val_pct": 6.914893617021277,
+      "teste_pct": 28.205128205128204,
+      "n_teste": 33
+    },
+    {
+      "real": "normal_colon_mucosa",
+      "pred": "colorectal_adenocarcinoma_epithelium",
+      "val_pct": 5.056179775280898,
+      "teste_pct": 10.76923076923077,
+      "n_teste": 21
+    }
+  ],
+  "f1_por_classe": {
+    "adipose": {
+      "val": 0.9597989949748744,
+      "val_reponderado": 0.9742392558879918,
+      "teste": 0.881159420289855,
+      "ic95_teste": [
+        0.8550712003545838,
+        0.9040939669426421
+      ]
+    },
+    "background": {
+      "val": 0.9879518072289156,
+      "val_reponderado": 0.9878310023114298,
+      "teste": 1.0,
+      "ic95_teste": [
+        1.0,
+        1.0
+      ]
+    },
+    "cancer-associated_stroma": {
+      "val": 0.7362637362637363,
+      "val_reponderado": 0.72123184519437,
+      "teste": 0.39215686274509803,
+      "ic95_teste": [
+        0.30835664335664337,
+        0.4615618075605989
+      ]
+    },
+    "colorectal_adenocarcinoma_epithelium": {
+      "val": 0.8344594594594594,
+      "val_reponderado": 0.8632523037970823,
+      "teste": 0.8571428571428571,
+      "ic95_teste": [
+        0.8322968122877431,
+        0.8819720162640516
+      ]
+    },
+    "debris": {
+      "val": 0.814317673378076,
+      "val_reponderado": 0.7684678342260055,
+      "teste": 0.7665198237885462,
+      "ic95_teste": [
+        0.7021573365867393,
+        0.821774513695911
+      ]
+    },
+    "lymphocytes": {
+      "val": 0.9588477366255144,
+      "val_reponderado": 0.968487555218318,
+      "teste": 0.9454545454545454,
+      "ic95_teste": [
+        0.922609372696447,
+        0.9682539682539683
+      ]
+    },
+    "mucus": {
+      "val": 0.84,
+      "val_reponderado": 0.8746766101546017,
+      "teste": 0.769811320754717,
+      "ic95_teste": [
+        0.7332086835660865,
+        0.8087881156913379
+      ]
+    },
+    "normal_colon_mucosa": {
+      "val": 0.7365591397849462,
+      "val_reponderado": 0.756905416829253,
+      "teste": 0.806282722513089,
+      "ic95_teste": [
+        0.756726154385606,
+        0.8450376857972968
+      ]
+    },
+    "smooth_muscle": {
+      "val": 0.8136882129277566,
+      "val_reponderado": 0.7946645484518888,
+      "teste": 0.6613333333333333,
+      "ic95_teste": [
+        0.596888541165142,
+        0.7167634335154827
+      ]
+    }
+  },
+  "tiles_b_positivo": {
+    "adipose": {
+      "treino": 0,
+      "n_treino": 199,
+      "teste": 0,
+      "n_teste": 381
+    },
+    "background": {
+      "treino": 0,
+      "n_treino": 212,
+      "teste": 0,
+      "n_teste": 235
+    },
+    "cancer-associated_stroma": {
+      "treino": 0,
+      "n_treino": 188,
+      "teste": 5,
+      "n_teste": 117
+    },
+    "colorectal_adenocarcinoma_epithelium": {
+      "treino": 0,
+      "n_treino": 274,
+      "teste": 0,
+      "n_teste": 333
+    },
+    "debris": {
+      "treino": 0,
+      "n_treino": 228,
+      "teste": 2,
+      "n_teste": 97
+    },
+    "lymphocytes": {
+      "treino": 0,
+      "n_treino": 248,
+      "teste": 0,
+      "n_teste": 193
+    },
+    "mucus": {
+      "treino": 0,
+      "n_treino": 187,
+      "teste": 0,
+      "n_teste": 289
+    },
+    "normal_colon_mucosa": {
+      "treino": 0,
+      "n_treino": 179,
+      "teste": 0,
+      "n_teste": 195
+    },
+    "smooth_muscle": {
+      "treino": 0,
+      "n_treino": 285,
+      "teste": 16,
+      "n_teste": 160
+    }
+  },
+  "versoes": {
+    "python": "3.12.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.9.1"
+  }
+}
